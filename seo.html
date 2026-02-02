@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO & Marketing Portfolio | Michal Przytocki</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="portfolio-page seo-theme">
+    <nav class="main-nav">
+        <a href="index.html" class="nav-logo">MP</a>
+        <div class="nav-links">
+            <a href="it.html">IT</a>
+            <a href="seo.html" class="active">SEO</a>
+            <a href="#contact">Contact</a>
+            <div class="theme-toggle" onclick="toggleTheme()">
+                <span class="theme-toggle-label">Dark Mode</span>
+                <div class="theme-toggle-switch"></div>
+                <span class="theme-toggle-status"></span>
+            </div>
+        </div>
+    </nav>
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        }
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (saved) {
+                document.documentElement.setAttribute('data-theme', saved);
+            } else if (prefersDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    </nav>
+
+    <header class="page-hero">
+        <div class="hero-content">
+            <span class="hero-label">SEO & Marketing</span>
+            <h1>I find patterns others miss.</h1>
+            <p class="hero-subtitle">Data-driven optimizer. I test what works instead of guessing.</p>
+        </div>
+    </header>
+
+    <section class="stats-section">
+        <div class="section-container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">20M+</span>
+                    <p>Views Generated</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">500K</span>
+                    <p>Conversions</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2.5-5%</span>
+                    <p>CVR</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4+</span>
+                    <p>Years</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section">
+        <div class="section-container">
+            <h2>Experience</h2>
+
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-number">01</div>
+                    <h3>Affiliate Campaigns</h3>
+                    <p>Lead generation for affiliate networks and sponsors. Built conversion funnels from user behavior data. Managed US, UK & international traffic via Google Analytics geo-segmentation.</p>
+                    <div class="project-tags">
+                        <span>Lead Gen</span>
+                        <span>Analytics</span>
+                        <span>Funnels</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-number">02</div>
+                    <h3>TikTok Spark Ads</h3>
+                    <p>Managed paid campaigns balancing organic reach with strategic ad spend. Optimized CTR, CPC and CVR through continuous testing.</p>
+                    <div class="project-tags">
+                        <span>PPC</span>
+                        <span>Paid Social</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-number">03</div>
+                    <h3>Content & Keyword Testing</h3>
+                    <p>Identified high-traffic terms competitors missed. Tested hundreds of title/description/tag combinations to find what consistently ranks.</p>
+                    <div class="project-tags">
+                        <span>A/B Testing</span>
+                        <span>SEO</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-number">04</div>
+                    <h3>Red Dragon (YouTube)</h3>
+                    <p>Built brand from scratch at 16. Motion graphics, visual identity, grew to 1K subs. Learned SEO fundamentals through real experimentation.</p>
+                    <div class="project-tags">
+                        <span>Branding</span>
+                        <span>Content</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="tools-section">
+        <div class="section-container">
+            <h2>Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-item">Google Analytics</div>
+                <div class="tool-item">TikTok Ads Manager</div>
+                <div class="tool-item">Adobe Photoshop</div>
+                <div class="tool-item">Motion Graphics</div>
+                <div class="tool-item">Video Editing</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="certifications-section">
+        <div class="section-container">
+            <h2>Education</h2>
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <span class="cert-year">2020 - 2023</span>
+                    <h4>BSc Computer Networks (Hons)</h4>
+                    <p>University of Portsmouth</p>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-year">2018 - 2020</span>
+                    <h4>BTEC Extended Diploma IT</h4>
+                    <p>Triple Distinction Star</p>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-year">Languages</span>
+                    <h4>English & Polish</h4>
+                    <p>Native (both)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <h2>Get in Touch</h2>
+            <p>Looking for SEO & marketing roles</p>
+            <a href="mailto:ardetdzn@proton.me" class="contact-button">ardetdzn@proton.me</a>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com/" target="_blank">Twitter</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Michal Przytocki</p>
+    </footer>
+</body>
+</html>

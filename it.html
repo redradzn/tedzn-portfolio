@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Support Portfolio | Michal Przytocki</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="portfolio-page it-theme">
+    <nav class="main-nav">
+        <a href="index.html" class="nav-logo">MP</a>
+        <div class="nav-links">
+            <a href="it.html" class="active">IT</a>
+            <a href="seo.html">SEO</a>
+            <a href="#contact">Contact</a>
+            <div class="theme-toggle" onclick="toggleTheme()">
+                <span class="theme-toggle-label">Dark Mode</span>
+                <div class="theme-toggle-switch"></div>
+                <span class="theme-toggle-status"></span>
+            </div>
+        </div>
+    </nav>
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        }
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (saved) {
+                document.documentElement.setAttribute('data-theme', saved);
+            } else if (prefersDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    </nav>
+
+    <header class="page-hero">
+        <div class="hero-content">
+            <span class="hero-label">IT Support</span>
+            <h1>I fix what others give up on.</h1>
+            <p class="hero-subtitle">BSc Computer Networks graduate. Patient troubleshooter who explains tech in plain English.</p>
+        </div>
+    </header>
+
+    <section class="stats-section">
+        <div class="section-container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <p>Devices Repaired</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10+</span>
+                    <p>Years on Windows</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100s</span>
+                    <p>Users Helped</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section">
+        <div class="section-container">
+            <h2>Problem Solving</h2>
+
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-number">01</div>
+                    <h3>Surface Laptop BIOS Bypass</h3>
+                    <p>BIOS-locked with disabled USB ports and corrupted Windows on soldered storage. Booted externally via Windows-To-Go, cloned fresh install with Macrium Reflect. Saved £300-500 vs Microsoft service.</p>
+                    <div class="project-tags">
+                        <span>Creative Solution</span>
+                        <span>Cost Saving</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-number">02</div>
+                    <h3>MacBook Pro No-Boot Fix</h3>
+                    <p>2021 M1 Pro 16" dead on arrival. Systematic teardown found loose battery contact screw. Simple fix, saved customer from £500+ logic board misdiagnosis.</p>
+                    <div class="project-tags">
+                        <span>Diagnostics</span>
+                        <span>Apple Hardware</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-number">03</div>
+                    <h3>Project TOAD</h3>
+                    <p>Self-taught web development. Built frontend, implemented security best practices, open-sourced the UI/UX.</p>
+                    <div class="project-tags">
+                        <span>Web Dev</span>
+                        <span>Self-Taught</span>
+                    </div>
+                    <a href="https://umean.app/" target="_blank" class="project-link">umean.app &rarr;</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="repairs-section">
+        <div class="section-container">
+            <h2>Repair Experience</h2>
+
+            <div class="repair-category">
+                <h3>Laptops</h3>
+                <div class="repair-grid">
+                    <div class="repair-item">
+                        <span class="repair-device">Surface Laptop 1</span>
+                        <span class="repair-work">BIOS bypass + OS recovery</span>
+                    </div>
+                    <div class="repair-item">
+                        <span class="repair-device">MacBook Pro 16" M1 Pro</span>
+                        <span class="repair-work">No-boot diagnosis + fix</span>
+                    </div>
+                    <div class="repair-item">
+                        <span class="repair-device">MacBook Pro 13" M1</span>
+                        <span class="repair-work">Trackpad replacement</span>
+                    </div>
+                    <div class="repair-item">
+                        <span class="repair-device">Dell Precision M3800</span>
+                        <span class="repair-work">Fan, battery, SSD, RAM upgrades</span>
+                    </div>
+                    <div class="repair-item">
+                        <span class="repair-device">Toshiba Laptop</span>
+                        <span class="repair-work">Screen replacement</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="repair-category">
+                <h3>Desktops</h3>
+                <div class="repair-grid">
+                    <div class="repair-item">
+                        <span class="repair-device">Custom Builds</span>
+                        <span class="repair-work">Gaming & business PCs</span>
+                    </div>
+                    <div class="repair-item">
+                        <span class="repair-device">Upgrades</span>
+                        <span class="repair-work">NVMe SSD, RAM, thermal paste</span>
+                    </div>
+                    <div class="repair-item">
+                        <span class="repair-device">OS Installs</span>
+                        <span class="repair-work">Windows 7 / 8 / 10 / 11</span>
+                    </div>
+                    <div class="repair-item">
+                        <span class="repair-device">Maintenance</span>
+                        <span class="repair-work">Malware removal, optimization</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="repair-category">
+                <h3>Phones & Tablets</h3>
+                <div class="repair-grid">
+                    <div class="repair-item highlight">
+                        <span class="repair-device">Samsung Z Fold 2</span>
+                        <span class="repair-work">Folding screen + hinge + housing</span>
+                    </div>
+                    <div class="repair-item">
+                        <span class="repair-device">iPhone X</span>
+                        <span class="repair-work">Screen, battery, NFC coil, taptic engine</span>
+                    </div>
+                    <div class="repair-item">
+                        <span class="repair-device">iPhone XR / SE / 6</span>
+                        <span class="repair-work">Screens, charging ports, home buttons</span>
+                    </div>
+                    <div class="repair-item">
+                        <span class="repair-device">Samsung Galaxy / Note</span>
+                        <span class="repair-work">Battery replacements</span>
+                    </div>
+                    <div class="repair-item">
+                        <span class="repair-device">Motorola G85</span>
+                        <span class="repair-work">Screen + housing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tools-section">
+        <div class="section-container">
+            <h2>Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-item">TeamViewer</div>
+                <div class="tool-item">AnyDesk</div>
+                <div class="tool-item">Macrium Reflect</div>
+                <div class="tool-item">CPU-Z</div>
+                <div class="tool-item">Malwarebytes</div>
+                <div class="tool-item">Virtual Machines</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="certifications-section">
+        <div class="section-container">
+            <h2>Education</h2>
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <span class="cert-year">2020 - 2023</span>
+                    <h4>BSc Computer Networks (Hons)</h4>
+                    <p>University of Portsmouth</p>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-year">2018 - 2020</span>
+                    <h4>BTEC Extended Diploma IT</h4>
+                    <p>Triple Distinction Star</p>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-year">Languages</span>
+                    <h4>English & Polish</h4>
+                    <p>Native (both)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <h2>Get in Touch</h2>
+            <p>Looking for 1st/2nd line support roles in Portsmouth</p>
+            <a href="mailto:ardetdzn@proton.me" class="contact-button">ardetdzn@proton.me</a>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Michal Przytocki</p>
+    </footer>
+</body>
+</html>

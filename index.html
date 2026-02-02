@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michal Przytocki | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="landing">
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <span class="theme-toggle-label">Dark Mode</span>
+        <div class="theme-toggle-switch"></div>
+        <span class="theme-toggle-status"></span>
+    </div>
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        }
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (saved) {
+                document.documentElement.setAttribute('data-theme', saved);
+            } else if (prefersDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <div class="landing-container">
+        <header class="landing-header">
+            <h1 class="landing-name">Michal Przytocki</h1>
+        </header>
+
+        <main class="path-selection">
+            <p class="selection-prompt">Select a discipline</p>
+
+            <div class="path-cards">
+                <a href="it.html" class="path-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <path d="M8 21h8M12 17v4"/>
+                        </svg>
+                    </div>
+                    <h2>IT Support</h2>
+                    <p>Hardware repair & technical solutions</p>
+                    <span class="card-arrow">&rarr;</span>
+                </a>
+
+                <a href="seo.html" class="path-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 3v18h18"/>
+                            <path d="M7 16l4-4 4 4 5-6"/>
+                        </svg>
+                    </div>
+                    <h2>SEO & Marketing</h2>
+                    <p>Growth strategies and digital optimization</p>
+                    <span class="card-arrow">&rarr;</span>
+                </a>
+            </div>
+        </main>
+
+        <footer class="landing-footer">
+            <div class="contact-links">
+                <a href="mailto:ardetdzn@proton.me">Email</a>
+                <a href="https://linkedin.com/in/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/" target="_blank">GitHub</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
