@@ -79,39 +79,77 @@
             <h2>Experience</h2>
 
             <div class="projects-grid">
-                <article class="project-card">
+                <article class="project-card has-images">
+                    <div class="project-images">
+                        <img src="seo-images/5.png" alt="Google Analytics realtime overview">
+                    </div>
                     <div class="project-number">01</div>
-                    <h3>Affiliate Campaigns</h3>
-                    <p>Lead generation for affiliate networks and sponsors. Built conversion funnels from user behavior data. Managed US, UK & international traffic via Google Analytics geo-segmentation.</p>
+                    <h3>Google Analytics</h3>
+                    <p>Real-time traffic monitoring, geo-segmentation for US/UK/international audiences, device breakdown analysis. Data-driven decisions for campaign optimization.</p>
                     <div class="project-tags">
-                        <span>Lead Gen</span>
                         <span>Analytics</span>
-                        <span>Funnels</span>
+                        <span>Data</span>
                     </div>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card has-images">
+                    <div class="project-images">
+                        <img src="seo-images/7.png" alt="TikTok 293K views">
+                        <img src="seo-images/1.png" alt="TikTok post analysis">
+                        <img src="seo-images/3.png" alt="TikTok Studio multiple accounts">
+                    </div>
                     <div class="project-number">02</div>
-                    <h3>TikTok Spark Ads</h3>
-                    <p>Managed paid campaigns balancing organic reach with strategic ad spend. Optimized CTR, CPC and CVR through continuous testing.</p>
+                    <h3>TikTok Content Performance</h3>
+                    <p>293K+ post views, 1600+ hours total play time, 347 new followers from single campaigns. Managing multiple accounts with combined 645K+ reach.</p>
                     <div class="project-tags">
-                        <span>PPC</span>
-                        <span>Paid Social</span>
+                        <span>TikTok</span>
+                        <span>Viral Content</span>
                     </div>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card has-images">
+                    <div class="project-images">
+                        <img src="seo-images/4.png" alt="TikTok engagement 30K likes">
+                        <img src="seo-images/8.png" alt="Comments flooding in">
+                        <img src="seo-images/9.png" alt="Positive comment feedback">
+                    </div>
                     <div class="project-number">03</div>
-                    <h3>Content & Keyword Testing</h3>
-                    <p>Identified high-traffic terms competitors missed. Tested hundreds of title/description/tag combinations to find what consistently ranks.</p>
+                    <h3>Engagement & Virality</h3>
+                    <p>30.4K likes, 180+ comments, high share rates. Content that sparks conversation - "10/10 rage bait well done", "good marketing on your part".</p>
+                    <div class="project-tags">
+                        <span>Engagement</span>
+                        <span>Viral</span>
+                    </div>
+                </article>
+
+                <article class="project-card has-images">
+                    <div class="project-images">
+                        <img src="seo-images/2.png" alt="Audience demographics">
+                    </div>
+                    <div class="project-number">04</div>
+                    <h3>Audience Targeting</h3>
+                    <p>Demographic analysis: 18-24 (37%), 25-34 (45%). Geographic targeting with 96.8% UK reach. Understanding who engages and optimizing content accordingly.</p>
+                    <div class="project-tags">
+                        <span>Demographics</span>
+                        <span>Targeting</span>
+                    </div>
+                </article>
+
+                <article class="project-card has-images">
+                    <div class="project-images">
+                        <img src="seo-images/6.png" alt="Multi-device testing setup">
+                    </div>
+                    <div class="project-number">05</div>
+                    <h3>A/B Testing Infrastructure</h3>
+                    <p>Multi-device testing setup for content optimization. Testing titles, thumbnails, descriptions across variants to find what consistently performs.</p>
                     <div class="project-tags">
                         <span>A/B Testing</span>
-                        <span>SEO</span>
+                        <span>Optimization</span>
                     </div>
                 </article>
 
                 <article class="project-card">
-                    <div class="project-number">04</div>
+                    <div class="project-number">06</div>
                     <h3>Red Dragon (YouTube)</h3>
                     <p>Built brand from scratch at 16. Motion graphics, visual identity, grew to 1K subs. Learned SEO fundamentals through real experimentation.</p>
                     <div class="project-tags">
@@ -172,7 +210,64 @@
     </section>
 
     <footer class="main-footer">
-        <p>&copy; 2024 Michal Przytocki</p>
+        <p>&copy; 2026 Michal Przytocki</p>
     </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#8249;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Enlarged view">
+            <div class="lightbox-counter"><span id="lightbox-current">1</span> / <span id="lightbox-total">1</span></div>
+        </div>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#8250;</button>
+    </div>
+
+    <script>
+        let currentImages = [];
+        let currentIndex = 0;
+
+        document.querySelectorAll('.project-images img').forEach(img => {
+            img.onclick = function() {
+                const container = this.closest('.project-images');
+                currentImages = Array.from(container.querySelectorAll('img')).map(i => i.src);
+                currentIndex = currentImages.indexOf(this.src);
+                openLightbox();
+            };
+        });
+
+        function openLightbox() {
+            document.getElementById('lightbox').classList.add('active');
+            document.getElementById('lightbox-img').src = currentImages[currentIndex];
+            document.getElementById('lightbox-current').textContent = currentIndex + 1;
+            document.getElementById('lightbox-total').textContent = currentImages.length;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(dir) {
+            currentIndex += dir;
+            if (currentIndex < 0) currentIndex = currentImages.length - 1;
+            if (currentIndex >= currentImages.length) currentIndex = 0;
+            document.getElementById('lightbox-img').src = currentImages[currentIndex];
+            document.getElementById('lightbox-current').textContent = currentIndex + 1;
+        }
+
+        document.getElementById('lightbox').onclick = function(e) {
+            if (e.target === this) closeLightbox();
+        };
+
+        document.addEventListener('keydown', function(e) {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+    </script>
 </body>
 </html>
